@@ -14,7 +14,7 @@ echo ---------------------
 
 :adbinstall
 if !count!==1 (
-	adb install %1
+	adb install -t -d -r %1
 ) else (
 	set /p inputTarget=«Î ‰»Î…Ë±∏–Ú∫≈:
 	if !inputTarget! GTR  !count!+1  (
@@ -28,7 +28,7 @@ if !count!==1 (
 	set /a tempTarget=!inputTarget!-1
 	for /f "delims==. tokens=3" %%i in ('set devices[!tempTarget!]') do (
 		echo %%i
-		adb -s %%i install %1
+		adb -s %%i install -t -d -r %1
 	)
 	
 )
