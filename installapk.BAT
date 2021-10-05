@@ -12,6 +12,11 @@ for /f "skip=1 tokens=1" %%i in ('adb devices') do (
 
 echo ---------------------
 
+if !count! lss 1 (
+	echo 没有找到设备
+	goto end
+)
+
 :adbinstall
 if !count!==1 (
 	adb install -t -d -r %1
@@ -33,5 +38,7 @@ if !count!==1 (
 	
 )
 echo ---------------------
+
+:end
 
 pause
