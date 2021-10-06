@@ -21,7 +21,7 @@ if !count! lss 1 (
 )
 
 :adbinstall
-if !count!==100 (
+if !count!==1 (
 	adb install -t -d -r %1
 ) else (
 	set /p inputTarget=«Î ‰»Î…Ë±∏–Ú∫≈:
